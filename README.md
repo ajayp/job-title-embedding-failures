@@ -7,7 +7,7 @@
 A live diagnostics sandbox for OpenAI title embeddings — built to expose where embeddings break: ambiguous acronyms like `CRO`, over-similarity across `VP` titles, seniority collapse betweaen `Director` and `VP`, and drift for non-canonical labels like `Revenue Leader`. Builds a live cosine-similarity matrix across 35+ titles, algorithmically detects where the model breaks down, and surfaces those failures directly in the UI.
 
 <img width="862" height="482" alt="image" src="https://github.com/user-attachments/assets/639c54a1-7fa0-474e-956e-cbb89ed5f979" />
-<img width="1232" height="591" alt="image" src="https://github.com/user-attachments/assets/3866e182-19ca-4495-a140-3222657575c4" />
+<img width="1179" height="625" alt="image" src="https://github.com/user-attachments/assets/dcec6a52-77bb-4bd2-b99e-3dd0d791a467" />
 
 
 *Cosine similarity matrix (left) · Failure mode breakdown (right)*

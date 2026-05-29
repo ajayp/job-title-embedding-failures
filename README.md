@@ -62,28 +62,28 @@ A 2D PCA scatter plot of all 46 title vectors, computed client-side via power-it
 | *HR VP / VP HR / VP of HR* | **0.80–0.85** | Word order doesn't change the role — the model gets this right |
 | *Director of Engineering* ↔ *VP of Engineering* | **0.79** | Adjacent seniority, same department — strong relationship maintained |
 
-#### Failure Cases
+### Failure Cases
 
-##### 🔤 Acronym Blindspot
+#### 🔤 Acronym Blindspot
 `CRO` is ambiguous across four expansions — the embedding averages across meanings and collapses into noise. Any pipeline that skips acronym expansion will systematically fail to match C-suite roles.
 - *Chief Revenue Officer* vs. other executive titles → **0.50+**
 - *CRO* (same role, acronym form) → **0.16–0.41** — scores just **0.24** against VP of Sales, while unrelated *Software Engineer* (**0.34**) scores higher
 
-##### 🔡 Syntactic Format Sensitivity
+#### 🔡 Syntactic Format Sensitivity
 The model clusters by grammatical pattern as much as by meaning — `"VP of X"` titles score higher with each other than with semantically equivalent `"X VP"` titles.
 - *VP of Engineering* ↔ *VP of Finance* (same format, different dept) → **0.74**
 - *VP of Engineering* ↔ *Finance VP* (different format, different dept) → **0.55**
 
-##### 🏢 Cross-Departmental Over-Similarity
+#### 🏢 Cross-Departmental Over-Similarity
 The model over-indexes on seniority tokens like `VP`, collapsing functional boundaries between unrelated departments.
 - *VP of Sales* ↔ *VP of Marketing* → **0.84** — higher than many same-title word-order variants
 
-##### 📊 Seniority Conflation
+#### 📊 Seniority Conflation
 VP and Director are separated by the same margin as VPs across departments — a **0.05 delta** is the only thing between a seniority boundary and a departmental one.
 - *VP of Engineering* ↔ *Director of Engineering* (same dept, different level) → **0.79**
 - *VP of Engineering* ↔ *VP of Finance* (same level, different dept) → **0.74**
 
-##### 🌀 Functional Title Drift
+#### 🌀 Functional Title Drift
 Non-canonical titles drift from their formal equivalents. `VP` and `Director` anchor embeddings toward executive space; titles without those tokens drift to a weak centroid.
 - *Revenue Leader* ↔ *VP of Sales* → **0.54** — same role; *VP of Marketing* (different dept) scores **0.84** against the same title
 - *Head of People* ↔ *VP of HR* → **0.60** — same function, same level

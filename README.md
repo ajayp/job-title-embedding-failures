@@ -45,6 +45,10 @@ Titles orbit concentric rings by seniority level (L1 IC → L4 VP/C-Suite). Edge
 ### Embedding Map
 A 2D PCA scatter plot of all 46 title vectors, computed client-side via power-iteration PCA. Shows how the model actually clusters titles in its vector space, independent of the similarity scores.
 
+<details><summary>📸 Embedding Map</summary>
+<img width="1000" height="500" alt="Embedding Map — 2D PCA scatter plot of all 46 title vectors" src="screenshots/embedding-map.jpg" />
+</details>
+
 ---
 
 ## Findings

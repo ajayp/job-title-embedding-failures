@@ -781,7 +781,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5" style={{ maxWidth: 760 }}>
             <div style={{ display: 'flex', gap: 24, alignItems: 'flex-start' }}>
               <svg
                 viewBox={`0 0 ${scatterData.W} ${scatterData.H}`}
